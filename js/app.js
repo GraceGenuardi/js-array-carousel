@@ -30,3 +30,27 @@ function prevSlide() {
     currentSlide--;
   } 
 
+//5. Mostra la prossima slide
+function nextSlide() {
+    reset();
+    slides[currentSlide + 1].style.display = 'block';
+    currentSlide++;
+  }
+  
+  //6. Attiva la freccia sinistra per lo switch
+  leftArrow.addEventListener('click', function() {
+    if (currentSlide === 0) {
+      currentSlide = slides.length;
+    }
+    prevSlide();
+  });
+  
+  //7.Attiva la freccia destra per lo switch
+  rightArrow.addEventListener('click', function() {
+    if (currentSlide === slides.length - 1) {
+      currentSlide = -1;
+    }
+    nextSlide();
+  });
+  
+  startSlide();  
